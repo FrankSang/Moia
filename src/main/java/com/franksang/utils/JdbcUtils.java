@@ -11,7 +11,8 @@ import java.sql.*;
 public final class JdbcUtils {
 
     private static Logger logger = LoggerFactory.getLogger(JdbcUtils.class);
-    private String url = "jdbc:oracle:thin:ds/ds@192.168.83.30:1521/ORCL";
+    private String url = HostUtils.getOracleUrl();
+    //"jdbc:oracle:thin:ds/ds@192.168.83.30:1521/ORCL";
     //private String user = "sa";
     //private String password = "abcd-1234";
     private static JdbcUtils Instance = null;

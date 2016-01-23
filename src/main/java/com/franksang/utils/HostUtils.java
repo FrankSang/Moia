@@ -15,10 +15,14 @@ public class HostUtils {
     private static String CONFIG = "config.properties";
     private static String path = HostUtils.class.getClassLoader().getResource("").getPath();
 
-    public static String getOracleUrl() throws IOException {
+    public static String getOracleUrl() {
 
         Properties prop = new Properties();
-        prop.load(new FileInputStream(path + CONFIG));
+        try {
+            prop.load(new FileInputStream(path + CONFIG));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         String dbdriver = prop.getProperty("db.driver");
         String dbtype = prop.getProperty("db.type");
         String dbuser = prop.getProperty("db.username");
@@ -30,7 +34,8 @@ public class HostUtils {
         //"jdbc:oracle:thin:ds/ds@192.168.83.30:1521/ORCL";
         if ("Oracle".equalsIgnoreCase("oracle")) {
             sb.append("jdbc:oracle:thin:").append(dbuser).append("/").append(dbpassword)
-                    .append("@").append(dbhost).append("/").append(dbname);
+                    .append("@").append(dbhost).append(":").append(dbport).append("/").append(dbname);
+            //System.out.println(sb.toString());
             return sb.toString();
         } else {
             return null;
