@@ -1,11 +1,16 @@
 package com.franksang.utils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.sql.*;
 
 /**
  * Created by root on 11/29/15.
  */
 public final class JdbcUtils {
+
+    private static Logger logger = LoggerFactory.getLogger(JdbcUtils.class);
     private String url = "jdbc:oracle:thin:ds/ds@192.168.83.30:1521/ORCL";
     //private String user = "sa";
     //private String password = "abcd-1234";
@@ -17,6 +22,7 @@ public final class JdbcUtils {
             return Instance;
         }*/
     public static JdbcUtils getInstance() {
+        //System.out.println("haha"+path);
         if (Instance == null) {
 
             synchronized (JdbcUtils.class) {

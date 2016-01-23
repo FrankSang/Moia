@@ -2,6 +2,8 @@ package com.franksang.dao.impl;
 
 import com.franksang.dao.UserDao;
 import com.franksang.entity.User;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,6 +15,7 @@ import java.sql.SQLException;
  */
 public class UserDaoImpl implements UserDao {
 
+    private static Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);
     @Override
     public ResultSet getUser(Connection conn, User user) throws SQLException {
 
