@@ -12,14 +12,17 @@ import java.sql.SQLException;
  * Created by root on 1/23/16.
  */
 public class UserDaoImpl implements UserDao {
+
     @Override
     public ResultSet getUser(Connection conn, User user) throws SQLException {
 
+        String LoginSQL="Select username,passwd from users where username=? and passwd=?";
         PreparedStatement ps =
-                conn.prepareStatement("Select username,password from users where username=?,password=?");
+                conn.prepareStatement(LoginSQL);
+        //System.out.println("Select username,passwd from users where username=? and passwd=?;");
         ps.setString(1, user.getUserName());
         ps.setString(2, user.getPassWord());
-
+        ///**/ResultSet rs= ps .executeQuery();
 
         return ps.executeQuery();
     }
