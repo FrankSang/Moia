@@ -5,16 +5,16 @@ package com.franksang.dsapi.properties;
  */
 //package com.franksang.dsapi.properties;
 
-        import java.io.*;
-        import java.text.SimpleDateFormat;
-        import java.util.Date;
+import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-        import com.ibm.iis.spi.security.crypto.DecryptException;
-        import com.ibm.iis.spi.security.crypto.EncryptException;
-        import com.sun.jna.NativeLong;
-        import com.sun.jna.Pointer;
-        import org.slf4j.Logger;
-        import org.slf4j.LoggerFactory;
+import com.ibm.iis.spi.security.crypto.DecryptException;
+import com.ibm.iis.spi.security.crypto.EncryptException;
+import com.sun.jna.NativeLong;
+import com.sun.jna.Pointer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class prop {
     private static Logger logger = LoggerFactory.getLogger(prop.class);
@@ -81,8 +81,7 @@ public class prop {
         return hour + ":" + minutes + ":" + seconds;
     }
 
-    public static String encryp(final String text)
-    {
+    public static String encryp(final String text) {
         try {
             return com.ibm.iis.isf.security.crypto.CryptoHelper.encrypt(text.getBytes("UTF-8"));
         } catch (EncryptException e) {
@@ -95,12 +94,10 @@ public class prop {
         return null;
     }
 
-    public static String decryp(final String encryptedText)
-    {
+    public static String decryp(final String encryptedText) {
         try {
             com.ibm.iis.isf.security.crypto.CryptoHelper.decrypt(encryptedText);
-        }catch(DecryptException e)
-        {
+        } catch (DecryptException e) {
             logger.error("DecryptException");
             e.printStackTrace();
         }

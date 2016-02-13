@@ -21,7 +21,7 @@
             <maxFileSize>5MB</maxFileSize>
         </triggeringPolicy>
         <encoder>
-            <pattern>%d{MM-dd HH:mm:ss}  %-5level %logger{36} - %msg%n</pattern>
+            <pattern>%d{yy-MM-dd HH:mm:ss}  %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
@@ -38,7 +38,7 @@
         </triggeringPolicy>
 
         <encoder>
-            <pattern>%d{MM-dd HH:mm:ss}  %-5level %logger{36} - %msg%n</pattern>
+            <pattern>%d{yy-MM-dd HH:mm:ss}  %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 

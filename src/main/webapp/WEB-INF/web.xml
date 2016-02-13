@@ -14,4 +14,25 @@
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <!--suppress ServletWithoutMappingInspection -->
+        <servlet-name>GetHeadServlet</servlet-name>
+        <servlet-class>com.franksang.servlet.GetHeadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <!--suppress WebProperties -->
+        <servlet-name>GetHeadServlet</servlet-name>
+        <url-pattern>/GetHeadServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <!--suppress ServletWithoutMappingInspection -->
+        <servlet-name>SetHeadServlet</servlet-name>
+        <servlet-class>com.franksang.servlet.SetHeadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <!--suppress WebProperties -->
+        <servlet-name>SetHeadServlet</servlet-name>
+        <url-pattern>/SetHeadServlet</url-pattern>
+    </servlet-mapping>
 </web-app>
